@@ -18,3 +18,7 @@ It is currently development. Pull requests are welcome.
 ### Middleware implementations:
 
 - _tbw_
+
+## Credits
+
+Unity docker images used are provided at [gableroux/unity3d](https://gitlab.com/gableroux/unity3d). Check out his [Unity CI Example project](https://github.com/GabLeRoux/unity3d-ci-example) if you are looking for a quick and painless way to setup a Unity CI/CD pipeline on cloud server.
