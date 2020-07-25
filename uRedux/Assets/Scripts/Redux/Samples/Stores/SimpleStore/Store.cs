@@ -13,6 +13,8 @@ namespace uRedux.Samples.SimpleStore {
         return previousState + 1;
       } else if (action is AddAction) {
         return previousState + ((AddAction)action).amount;
+      } else if (action is BuggyAction) {
+        throw new System.Exception("BuggyAction");
       } else {
         return previousState;
       }

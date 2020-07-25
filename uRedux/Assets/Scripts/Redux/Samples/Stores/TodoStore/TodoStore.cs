@@ -24,6 +24,10 @@ namespace uRedux.Samples.TodoStore {
           state.todos[toggleAction.index].completed = !state.todos[toggleAction.index].completed;
         }
 
+      } else if (action is BuggyAction) {
+        state.todos.Clear();  // Destructive action - clear the todo list
+        throw new Exception("BuggyAction");
+
       } else if (action is SetVisibilityFilterAction) {
         var setFilterAction = (SetVisibilityFilterAction)action;
         state.visibilityFilter = setFilterAction.filter;

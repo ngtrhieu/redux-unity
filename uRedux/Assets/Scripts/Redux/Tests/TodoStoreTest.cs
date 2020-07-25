@@ -75,5 +75,27 @@ namespace uRedux.Tests {
       Assert.AreEqual("Ship products", store.GetState().todos[2].text);
       Assert.AreEqual(false, store.GetState().todos[2].completed);
     }
+
+    [Test]
+    public void StateDoNotChangeWhenReducerThrowsException() {
+      var store = new TodoStore();
+
+      store.Dispatch(new AddTodoAction() { text = "Learn Redux" });
+      store.Dispatch(new AddTodoAction() { text = "Start first project" });
+      store.Dispatch(new AddTodoAction() { text = "Ship products" });
+
+      Assert.AreEqual(3, store.GetState().todos.Count);
+
+      try {
+        store.Dispatch(new BuggyAction());
+        // Exception should have been thrown
+        Assert.Fail();
+      } catch (System.Exception exception) {
+        Assert.AreEqual("BuggyAction", exception.Message);
+      }
+
+      // The state should have been reserved on destructive action
+      Assert.AreEqual(3, store.GetState().todos.Count);
+    }
   }
 }

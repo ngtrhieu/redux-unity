@@ -19,4 +19,6 @@ namespace uRedux.Samples.TodoStore {
     public EVisibilityFilter filter;
   }
 
+  public struct BuggyAction : IAction { }
+
 }
