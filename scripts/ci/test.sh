@@ -1,4 +1,4 @@
-echo "\033[0;32m:: Running step $0\033[0m"
+echo -e "\033[0;32m:: Running step $0\033[0m"
 
 echo "Testing $BUILD_NAME $TEST_PLATFORM"
 
@@ -17,5 +17,5 @@ ${UNITY_EXECUTABLE:-xvfb-run --auto-servernum --server-args='-screen 0 640x480x2
   -coverageOptions "generateAdditionalMetrics;generateHtmlReport;generateHtmlReportHistory;generateBadgeReport;assemblyFilters:+Assembly-CSharp" \
   -debugCodeOptimization
 
-echo "\033[0;32m:: Step $0 completed\033[0m"
+echo -e "\033[0;32m:: Step $0 completed\033[0m"
 exit $UNITY_EXIT_CODE
