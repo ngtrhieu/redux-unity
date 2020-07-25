@@ -1,0 +1,8 @@
+{
+  "name": "unity-redux",
+  "version": "0.0.1",
+  "description": "State management system for Unity3d",
+  "main": "index.js",
+  "author": "ngtrhieu",
+  "license": "MIT"
+}

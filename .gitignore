@@ -1,0 +1,39 @@
+# yarn dependencies
+/node_modules
+
+# build and tests folder
+[Bb]uilds/
+[Tt]est_[Rr]esults/
+
+# misc
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# test-reports
+/editmode-coverage
+/playmode-coverage
+/CodeCoverage
+*-results.xml
+
+# fastlane specific
+**/fastlane/report.xml
+
+# deliver temporary files
+**/fastlane/Preview.html
+
+# snapshot generated screenshots
+**/fastlane/screenshots
+
+# scan temporary files
+**/fastlane/test_output
+
+# keystore
+keystore.keystore
