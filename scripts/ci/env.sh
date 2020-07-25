@@ -17,10 +17,6 @@ echo -e "\033[0;32m:: Running step $0\033[0m"
 export IMAGE_NAME=${IMAGE_NAME:-"ngtrhieu/unity3d"}
 echo "IMAGE_NAME ${IMAGE_NAME}"
 
-# Unity executable
-export UNITY_EXECUTABLE=${UNITY_EXECUTABLE:-"/Applications/Unity/Hub/Editor/2019.4.1f1/Unity.app/Contents/MacOS/Unity"}
-echo "UNITY_EXECUTABLE ${UNITY_EXECUTABLE}"
-
 # Unity project folder
 export UNITY_PROJECT_FOLDER=${UNITY_PROJECT_FOLDER:-"uRedux"}
 echo "UNITY_PROJECT_FOLDER ${UNITY_PROJECT_FOLDER}"
@@ -39,6 +35,7 @@ echo "BUILD_NAME ${BUILD_NAME}"
 
 # The bucket to upload build artifacts / test reports to
 export ARTIFACT_BUCKET=${ARTIFACT_BUCKET:-"redux-unity-artifacts"}
+echo "ARTIFACT_BUCKET ${ARTIFACT_BUCKET}"
 
 # Unity content license
 export UNITY_LICENSE_CONTENT=${UNITY_LICENSE_CONTENT:-"$(cat ./secrets/Unity_lic.ulf)"}

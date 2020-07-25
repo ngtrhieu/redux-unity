@@ -7,6 +7,6 @@ docker run \
   -w /project/ \
   -v $(pwd):/project/ \
   $IMAGE_NAME \
-  /bin/bash -c /projects/scripts/ci/test.sh
+  /bin/bash -c "/project/scripts/test.sh"
 
 echo -e "\033[0;32m:: $0 completed\033[0m"

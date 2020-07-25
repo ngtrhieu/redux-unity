@@ -7,8 +7,8 @@
   "author": "ngtrhieu",
   "license": "MIT",
   "scripts": {
-    "test:editmode": "TEST_PLATFORM='editmode' source ./scripts/ci/env.sh && ./scripts/ci/prepare_license.sh && ./scripts/ci/test.sh",
-    "test:playmode": "TEST_PLATFORM='playmode' source ./scripts/ci/env.sh && ./scripts/ci/prepare_license.sh && ./scripts/ci/test.sh",
+    "test:editmode": "TEST_PLATFORM='editmode' UNITY_EXECUTABLE='/Applications/Unity/Hub/Editor/2019.4.1f1/Unity.app/Contents/MacOS/Unity' ./scripts/test.sh",
+    "test:playmode": "TEST_PLATFORM='playmode' UNITY_EXECUTABLE='/Applications/Unity/Hub/Editor/2019.4.1f1/Unity.app/Contents/MacOS/Unity' ./scripts/test.sh",
     "test": "yarn test:editmode",
     "commit": "git-cz"
   },

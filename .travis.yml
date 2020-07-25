@@ -1,0 +1,97 @@
+language shell
+
+os: linux
+dist: xenial
+
+branches:
+  only:
+    - master
+
+cache:
+  bundler: true
+  yarn: true
+
+before_install:
+  # Install curl, unzip
+  - |
+    if [ $TRAVIS_OS_NAME = 'linux' ]; then
+      sudo apt-get update
+      sudo apt-get install curl unzip
+    fi
+
+install:
+  # Install aws-cli
+  - |
+    if [ $TRAVIS_OS_NAME = 'linux' ]; then
+      curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      unzip awscliv2.zip
+      sudo ./aws/install
+    elif [ $TRAVIS_OS_NAME = 'osx' ]; then
+      curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+      sudo installer -pkg AWSCLIV2.pkg -target /
+    fi
+  
+  # Setup aws credentials
+  # Need to have both AWS_ACCESS_KEY and AWS_ACCESS_SECRET preset
+  - |
+    chmod +x ./scripts/utils/generate_aws_credentials.sh &&
+    ./scripts/utils/generate_aws_credentials.sh
+
+  # Install nodejs and yarn
+  - |
+    if [ $TRAVIS_OS_NAME = 'linux' ]; then
+      curl -sL https://deb.nodesource.com/setup_12.x | sudo bash
+      curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+      echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+      sudo apt-get update
+      sudo apt-get install nodejs yarn -y
+    elif [ $TRAVIS_OS_NAME = 'osx' ]; then
+      brew install node yarn
+    fi
+
+  # # Install ruby bundler
+  # - |
+  #   if [ $TRAVIS_OS_NAME = 'linux' ]; then
+  #     sudo apt-get install ruby-full -y
+  #   elif [ $TRAVIS_OS_NAME = 'osx' ]; then
+  #     brew install ruby
+  #   fi
+  # - gem install bundler
+
+before_script:
+  # Check environmental tools
+  - echo Node $(node --version)
+  - echo Gem $(gem --version)
+  - echo Bundle $(bundle --version)
+  - echo AWS $(aws --version)
+
+  # Install dependencies
+  - yarn install
+  # - bundle install
+
+  # Decrypt secrets inside ./secrets folder
+  openssl aes-256-cbc -K $encrypted_8026183efba4_key -iv $encrypted_8026183efba4_iv -in ./secrets/Unity_lic.ulf.enc -out ./secrets/Unity_lic.ulf -d
+
+  # Set the rest of environment variables
+  - chmod +x ./scripts/ci/steps/env.sh
+  - source ./scripts/ci/steps/env.sh
+
+_test_job: &test_job
+  stage: test
+  services:
+    - docker
+  script:
+    - chmod +x ./scripts/docker_test.sh
+    - ./scripts/docker_test.sh
+  after_script:
+    - aws s3 sync ./test_results s3://${ARTIFACT_BUCKET}/report_${TEST_PLATFORM}_${BUILD_TARGET}_${TRAVIS_BUILD_NUMBER}
+
+jobs:
+  include:
+    - name: EditMode test
+      env: TEST_PLATFORM editmode IMAGE_NAME=ngtrhieu/unity3d
+      <<: *test_job
+
+    # - name: PlatMode test
+    #   env: TEST_PLATFORM playmode IMAGE_NAME=ngtrhieu/unity3d
+    #   <<: *test_job
