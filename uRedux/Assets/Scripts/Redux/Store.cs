@@ -59,7 +59,8 @@ namespace uRedux {
 
     private IAction InitialDispatcher(IAction action) {
       lock (syncLock) {
-        state = reducer(state, action);
+        var cloned = ObjectExtensions.Copy(state);
+        state = reducer(cloned, action);
       }
       StageChanged?.Invoke();
       return action;
