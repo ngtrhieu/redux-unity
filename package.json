@@ -2,10 +2,14 @@
   "name": "unity-redux",
   "version": "0.0.1",
   "description": "State management system for Unity3d",
+  "repository": "git@github.com:ngtrhieu/redux-unity.git",
   "main": "index.js",
   "author": "ngtrhieu",
   "license": "MIT",
-  "scripts:": {
+  "scripts": {
+    "test:editmode": "TEST_PLATFORM='editmode' source ./scripts/ci/env.sh && ./scripts/ci/prepare_license.sh && ./scripts/ci/test.sh",
+    "test:playmode": "TEST_PLATFORM='playmode' source ./scripts/ci/env.sh && ./scripts/ci/prepare_license.sh && ./scripts/ci/test.sh",
+    "test": "yarn test:editmode",
     "commit": "git-cz"
   },
   "husky": {
@@ -22,6 +26,7 @@
     "@commitlint/cli": "^9.1.1",
     "@commitlint/config-conventional": "^9.1.1",
     "commitizen": "^4.1.2",
+    "cz-conventional-changelog": "3.2.0",
     "husky": "^4.2.5"
   }
 }
