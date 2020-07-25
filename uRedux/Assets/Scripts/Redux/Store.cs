@@ -47,9 +47,13 @@ namespace uRedux {
 
     private DispatcherDelgate ApplyMiddlewares(params MiddlewareDelegate<TState>[] middlewares) {
       DispatcherDelgate dispatcher = InitialDispatcher;
-      foreach (var middleware in middlewares) {
+
+      // Reverse apply middlewares
+      for (var i = middlewares.Length - 1; i >= 0; --i) {
+        var middleware = middlewares[i];
         dispatcher = middleware(this)(dispatcher);
       }
+
       return dispatcher;
     }
 
