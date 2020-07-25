@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using uRedux.Samples.TodoStore;
 
 namespace uRedux.Tests {
 

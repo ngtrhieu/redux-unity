@@ -1,37 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace uRedux.Tests {
-
-  public enum EVisibilityFilter {
-    SHOW_ALL = 0,
-    SHOW_COMPLETED,
-    SHOW_ACTIVE,
-  }
-
-  [Serializable]
-  public class TodoItem {
-    public string text;
-    public bool completed;
-  }
-
-  [Serializable]
-  public class TodoState {
-    public EVisibilityFilter visibilityFilter;
-    public List<TodoItem> todos;
-  }
-
-  public struct AddTodoAction : IAction {
-    public string text;
-  }
-
-  public struct ToggleTodoAction : IAction {
-    public int index;
-  }
-
-  public struct SetVisibilityFilterAction : IAction {
-    public EVisibilityFilter filter;
-  }
+namespace uRedux.Samples.TodoStore {
 
   public class TodoStore : Store<TodoState> {
     public TodoStore(TodoState initialState = default(TodoState), params MiddlewareDelegate<TodoState>[] middlewares)

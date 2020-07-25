@@ -12,8 +12,8 @@ It is currently development. Pull requests are welcome.
 
 ### Store implementations:
 
-- [SimpleStore](uRedux/Assets/Scripts/Redux/Tests/Stores/SimpleStore.cs) - a simple store that manage only 1 counting integer.
-- [TodoStore](uRedux/Assets/Scripts/Redux/Tests/Stores/ToDoStore.cs) - implementation of Redux's [Todo List](https://redux.js.org/basics/example)
+- [SimpleStore](uRedux/Assets/Scripts/Redux/Tests/Stores/SimpleStore) - a simple store that manage only 1 counting integer.
+- [TodoStore](uRedux/Assets/Scripts/Redux/Tests/Stores/TodoStore) - implementation of Redux's [Todo List](https://redux.js.org/basics/example)
 
 ### Middleware implementations:
 

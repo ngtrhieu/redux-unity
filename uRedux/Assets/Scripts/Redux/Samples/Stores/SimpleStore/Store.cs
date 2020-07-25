@@ -1,12 +1,9 @@
 
-namespace uRedux.Tests {
+namespace uRedux.Samples.SimpleStore {
 
-  struct CountAction : IAction { }
-  struct AddAction : IAction {
-    public int amount;
-  }
-  struct UnrecognizedAction : IAction { }
-
+  ///<summary>
+  ///Just a simple store that contains only an integer.
+  ///</summary>
   public class SimpleStore : Store<int> {
     public SimpleStore(int initialState = default(int), params MiddlewareDelegate<int>[] middlewares)
       : base(Reduce, initialState, middlewares) { }

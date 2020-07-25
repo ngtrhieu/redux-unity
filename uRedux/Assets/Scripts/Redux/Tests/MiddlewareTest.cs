@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using NUnit.Framework;
+using uRedux.Samples.SimpleStore;
 
 namespace uRedux.Tests {
 
