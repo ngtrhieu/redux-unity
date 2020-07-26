@@ -4,16 +4,16 @@
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 ![Package Version](https://img.shields.io/github/package-json/v/ngtrhieu/redux-unity)
 
-uRedux is a Redux inspired state management for Unity3D.
+uRedux is a Redux state management for Unity3D, inspired by [Redux](https://redux.js.org/) and [Redux.NET](https://github.com/GuillaumeSalles/redux.NET).
 
-It is currently development. Pull requests are welcome.
+The project is in active development. Pull requests are welcome.
 
 ## Examples
 
 ### Store implementations:
 
-- [SimpleStore](uRedux/Assets/Scripts/Redux/Tests/Stores/SimpleStore) - a simple store that manage only 1 counting integer.
-- [TodoStore](uRedux/Assets/Scripts/Redux/Tests/Stores/TodoStore) - implementation of Redux's [Todo List](https://redux.js.org/basics/example)
+- [SimpleStore](uRedux/Assets/Scripts/Redux/Samples/Stores/SimpleStore) - a simple store that manage only 1 counting integer.
+- [TodoStore](uRedux/Assets/Scripts/Redux/Samples/Stores/TodoStore) - implementation of Redux's [Todo List](https://redux.js.org/basics/example)
 
 ### Middleware implementations:
 
