@@ -18,46 +18,40 @@ namespace uRedux.Samples.SimpleStore {
     ///<summary>
     ///A middleware that modify AddAction amount by 1.
     ///</summary>
-    public static MiddlewareDelegate<int> addOneMiddleware = _ => {
-      return dispatcher => action => {
-        if (action is AddAction) {
-          var addAction = (AddAction)action;
-          var newAction = new AddAction() { amount = addAction.amount + 1 };
-          dispatcher.Invoke(newAction);
-          return newAction as IAction;
-        } else {
-          dispatcher.Invoke(action);
-          return action as IAction;
-        }
-      };
+    public static MiddlewareDelegate<int> addOneMiddleware = store => dispatcher => action => {
+      if (action is AddAction) {
+        var addAction = (AddAction)action;
+        var newAction = new AddAction() { amount = addAction.amount + 1 };
+        dispatcher.Invoke(newAction);
+        return newAction as IAction;
+      } else {
+        dispatcher.Invoke(action);
+        return action as IAction;
+      }
     };
 
     ///<summary>
     ///A middleware that double the AddAction amount.
     ///</summary>
-    public static MiddlewareDelegate<int> doubleMiddleware = _ => {
-      return dispatcher => action => {
-        if (action is AddAction) {
-          var addAction = (AddAction)action;
-          var newAction = new AddAction() { amount = addAction.amount * 2 };
-          dispatcher.Invoke(newAction);
-          return newAction as IAction;
-        } else {
-          dispatcher.Invoke(action);
-          return action as IAction;
-        }
-      };
+    public static MiddlewareDelegate<int> doubleMiddleware = store => dispatcher => action => {
+      if (action is AddAction) {
+        var addAction = (AddAction)action;
+        var newAction = new AddAction() { amount = addAction.amount * 2 };
+        dispatcher.Invoke(newAction);
+        return newAction as IAction;
+      } else {
+        dispatcher.Invoke(action);
+        return action as IAction;
+      }
     };
 
     ///<summary>
     ///A middleware that log the action out to console.
     ///</summary>
-    public static MiddlewareDelegate<int> logMiddleware = _ => {
-      return dispatcher => action => {
-        Debug.Log(JsonUtility.ToJson(action));
-        dispatcher.Invoke(action);
-        return action;
-      };
+    public static MiddlewareDelegate<int> logMiddleware = store => dispatcher => action => {
+      Debug.Log(JsonUtility.ToJson(action));
+      dispatcher.Invoke(action);
+      return action;
     };
 
   }
