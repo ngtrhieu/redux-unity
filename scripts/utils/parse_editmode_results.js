@@ -31,7 +31,7 @@ const renderTestCase = (testCase, level = 0) => {
       ? chalk.red(`(${duration}ms)`)
       : duration > 0.2
       ? chalk.yellow(`(${duration}ms)`)
-      : null
+      : ""
   );
 };
 
