@@ -52,7 +52,7 @@ namespace uRedux.Samples.RedditAPI {
       return post.didInvalidate;
     }
 
-    public static AsyncAction<RedditState> FetchPostsIfNeeded(string subreddit) {
+    public static uRedux.Thunk.AsyncAction<RedditState> FetchPostsIfNeeded(string subreddit) {
       return async (dispatch, getState) => {
         if (string.IsNullOrEmpty(subreddit))
           return;

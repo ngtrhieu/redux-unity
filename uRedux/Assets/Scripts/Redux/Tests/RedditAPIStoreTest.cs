@@ -1,6 +1,7 @@
-using UnityEngine;
 using NUnit.Framework;
 using System.Threading.Tasks;
+
+using uRedux.Thunk;
 using uRedux.Samples.RedditAPI;
 
 namespace uRedux.Tests {

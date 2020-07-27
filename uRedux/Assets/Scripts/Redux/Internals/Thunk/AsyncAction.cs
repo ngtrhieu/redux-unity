@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 
-namespace uRedux {
+namespace uRedux.Thunk {
   
   ///<summary>
   ///An async action
