@@ -89,8 +89,8 @@ _test_job: &test_job
 jobs:
   include:
     - name: EditMode test
-      env: TEST_PLATFORM editmode IMAGE_NAME=ngtrhieu/unity3d
+      env: TEST_PLATFORM=editmode IMAGE_NAME=ngtrhieu/unity3d
       <<: *test_job
-    # - name: PlatMode test
-    #   env: TEST_PLATFORM playmode IMAGE_NAME=ngtrhieu/unity3d
-    #   <<: *test_job
+    - name: PlayMode test
+      env: TEST_PLATFORM=playmode IMAGE_NAME=ngtrhieu/unity3d
+      <<: *test_job
