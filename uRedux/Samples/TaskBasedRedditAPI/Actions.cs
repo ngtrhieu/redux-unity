@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using System.Net.Http;
 
-namespace uRedux.Samples.RedditAPI {
+namespace uRedux.Samples.TaskBasedRedditAPI {
 
   ///<summary>
   ///Implementation of actions.js

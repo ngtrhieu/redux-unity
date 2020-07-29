@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
 
-namespace uRedux.Samples.RedditAPI {
+namespace uRedux.Samples.TaskBasedRedditAPI {
 
   ///<summary>
   ///Implementation of the reducers described at  

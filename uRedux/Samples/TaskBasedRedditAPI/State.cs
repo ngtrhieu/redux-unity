@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
 
-namespace uRedux.Samples.RedditAPI {
+namespace uRedux.Samples.TaskBasedRedditAPI {
 
   public class RedditState {
     public Dictionary<string, SubredditPost> postsBySubreddit = new Dictionary<string, SubredditPost>();

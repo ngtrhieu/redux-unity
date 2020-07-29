@@ -13,10 +13,11 @@ namespace uRedux.Thunk {
     }
 
     ///<summary>
-    ///Dispatch a coroutine AsyncAction.
+    ///Dispatch a Coroutine-based AsyncAction. Return the same action back.
     ///</summary>
-    public static Coroutine Dispatch<TState>(this IStore<TState> store, CoroutineAction<TState> action) {
-      return null; //UnityEngine.UnityThread.ExecuteCoroutine(action);
+    public static CoroutineAction<TState> Dispatch<TState>(this IStore<TState> store, CoroutineAction<TState> action) {
+      UnityThread.ExecuteCoroutine(action);
+      return action;
     }
 
   }
