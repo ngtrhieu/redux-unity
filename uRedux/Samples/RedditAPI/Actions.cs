@@ -53,12 +53,12 @@ namespace uRedux.Samples.RedditAPI {
     }
 
     public static uRedux.Thunk.AsyncAction<RedditState> FetchPostsIfNeeded(string subreddit) {
-      return async (dispatch, getState) => {
+      return async store => {
         if (string.IsNullOrEmpty(subreddit))
           return;
 
-        if (ShouldFetchPosts(getState(), subreddit)) {
-          await FetchPosts(dispatch, subreddit);
+        if (ShouldFetchPosts(store.GetState(), subreddit)) {
+          await FetchPosts(store.Dispatch, subreddit);
         }
       };
     }

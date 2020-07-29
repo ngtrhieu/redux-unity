@@ -19,5 +19,6 @@
     "helper",
     "C#",
     "upm"
-  ]
+  ],
+  "type": "library"
 }
