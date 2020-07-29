@@ -12,13 +12,13 @@ The project is in active development. Pull requests are welcome.
 
 ### Store implementations:
 
-- [SimpleStore](uRedux/Assets/Scripts/Redux/Samples/Stores/SimpleStore) - a simple store that manage only 1 counting integer.
-- [TodoStore](uRedux/Assets/Scripts/Redux/Samples/Stores/TodoStore) - implementation of Redux's [Todo List](https://redux.js.org/basics/example)
-- [RedditAPI](uRedux/Assets/Scripts/Redux/Samples/Stores/RedditAPI) - implementation of Redux's [RedditAPI](https://redux.js.org/advanced/example-reddit-api) with async actions.
+- [SimpleStore](uRedux/Samples/SimpleStore) - a simple store that manage only 1 counting integer.
+- [TodoStore](uRedux/Samples/TodoStore) - implementation of Redux's [Todo List](https://redux.js.org/basics/example)
+- [RedditAPI](uRedux/Samples/RedditAPI) - implementation of Redux's [RedditAPI](https://redux.js.org/advanced/example-reddit-api) with async actions.
 
 ### Middleware implementations:
 
-Basic middleware implementations can be found [here](uRedux/Assets/Scripts/Redux/Samples/Stores/SimpleStore/Middlewares.cs)
+Basic middleware implementations can be found [here](uRedux/Samples/SimpleStore/Middlewares.cs)
 
 ## Credits
 
