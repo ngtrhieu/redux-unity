@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 # Setup environment variables if it have not been set
 #
 # NOTE:

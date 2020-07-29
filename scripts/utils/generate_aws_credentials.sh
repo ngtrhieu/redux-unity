@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 # Create aws profile
 
 if [ -z $AWS_ACCESS_KEY ] || [ -z $AWS_ACCESS_SECRET ]; then

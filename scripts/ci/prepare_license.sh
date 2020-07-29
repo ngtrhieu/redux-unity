@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 # Prepare Unity license
 
 echo -e "\033[0;32m:: Running step $0\033[0m"
