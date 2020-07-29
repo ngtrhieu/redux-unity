@@ -1,0 +1,23 @@
+{
+  "name": "com.ngtrhieu.uredux",
+  "version": "0.0.1",
+  "displayName": "uRedux",
+  "description": "Redux implementation for Unity",
+  "author": {
+    "name": "ngtrhieu",
+    "email": "ngtrhieu0011@gmail.com"
+  },
+  "dependencies": {
+    "jillejr.newtonsoft.json-for-unity": "12.0.201",
+    "com.ngtrhieu.unitythread": "0.0.1"
+  },
+  "keywords": [
+    "unity",
+    "redux",
+    "async",
+    "util",
+    "helper",
+    "C#",
+    "upm"
+  ]
+}

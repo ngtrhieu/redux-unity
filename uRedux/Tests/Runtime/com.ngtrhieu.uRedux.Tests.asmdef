@@ -1,8 +1,8 @@
 {
     "name": "Tests",
     "references": [
-        "Redux",
-        "uRedux.Samples",
+        "com.ngtrhieu.uRedux",
+        "com.ngtrhieu.uRedux.Samples",
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner"
     ],
