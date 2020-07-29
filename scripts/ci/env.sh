@@ -20,7 +20,7 @@ export IMAGE_NAME=${IMAGE_NAME:-"ngtrhieu/unity3d"}
 echo "IMAGE_NAME ${IMAGE_NAME}"
 
 # Unity project folder
-export UNITY_PROJECT_FOLDER=${UNITY_PROJECT_FOLDER:-"uRedux"}
+export UNITY_PROJECT_FOLDER=${UNITY_PROJECT_FOLDER:-"uReduxSampleProj"}
 echo "UNITY_PROJECT_FOLDER ${UNITY_PROJECT_FOLDER}"
 
 # Build target, https://docs.unity3d.com/ScriptReference/BuildTarget.html
