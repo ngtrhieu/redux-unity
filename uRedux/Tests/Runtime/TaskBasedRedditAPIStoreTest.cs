@@ -2,11 +2,11 @@ using NUnit.Framework;
 using System.Threading.Tasks;
 
 using uRedux.Thunk;
-using uRedux.Samples.RedditAPI;
+using uRedux.Samples.TaskBasedRedditAPI;
 
 namespace uRedux.Tests {
 
-  public class RedditAPIStoreStest {
+  public class TaskBasedRedditAPIStoreTest {
     [Test]
     public void StoreShouldHaveDefaultState() {
       var store = new RedditStore();
