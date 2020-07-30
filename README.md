@@ -14,7 +14,8 @@ The project is in active development. Pull requests are welcome.
 
 - [SimpleStore](uRedux/Samples/SimpleStore) - a simple store that manage only 1 counting integer.
 - [TodoStore](uRedux/Samples/TodoStore) - implementation of Redux's [Todo List](https://redux.js.org/basics/example)
-- [RedditAPI](uRedux/Samples/RedditAPI) - implementation of Redux's [RedditAPI](https://redux.js.org/advanced/example-reddit-api) with async actions.
+- [TaskBasedRedditAPI](uRedux/Samples/TaskBasedRedditAPI) - implementation of Redux's [RedditAPI](https://redux.js.org/advanced/example-reddit-api) with task-based async actions.
+- [CoroutineBasedRedditAPI](uRedux/Samples/CoroutineBasedRedditAPI) - implementation of Redux's [RedditAPI](https://redux.js.org/advanced/example-reddit-api) with coroutine actions.
 
 ### Middleware implementations:
 
