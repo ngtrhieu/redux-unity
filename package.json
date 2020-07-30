@@ -1,6 +1,6 @@
 {
   "name": "unity-redux",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "State management system for Unity3d",
   "repository": "git@github.com:ngtrhieu/redux-unity.git",
   "main": "index.js",
