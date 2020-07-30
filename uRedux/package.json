@@ -1,6 +1,6 @@
 {
   "name": "com.ngtrhieu.uredux",
-  "version": "0.0.3",
+  "version": "0.0.1",
   "displayName": "uRedux",
   "description": "Redux implementation for Unity",
   "author": {
