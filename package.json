@@ -10,7 +10,8 @@
     "test:editmode": "TEST_PLATFORM='editmode' UNITY_EXECUTABLE='/Applications/Unity/Hub/Editor/2019.4.1f1/Unity.app/Contents/MacOS/Unity' ./scripts/test.sh",
     "test:playmode": "TEST_PLATFORM='playmode' UNITY_EXECUTABLE='/Applications/Unity/Hub/Editor/2019.4.1f1/Unity.app/Contents/MacOS/Unity' ./scripts/test.sh",
     "test": "yarn test:editmode",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "release": "standard-version"
   },
   "husky": {
     "hooks": {
@@ -25,13 +26,12 @@
   "devDependencies": {
     "@commitlint/cli": "^9.1.1",
     "@commitlint/config-conventional": "^9.1.1",
+    "chalk": "^4.1.0",
     "commitizen": "^4.1.2",
     "cz-conventional-changelog": "3.2.0",
-    "husky": "^4.2.5"
-  },
-  "dependencies": {
-    "chalk": "^4.1.0",
+    "husky": "^4.2.5",
     "lodash": "^4.17.19",
+    "standard-version": "^8.0.2",
     "xml2js": "^0.4.23"
   }
 }
