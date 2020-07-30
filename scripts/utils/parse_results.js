@@ -21,15 +21,15 @@ const renderInnerResult = (result, level = 0) => {
 const renderTestCase = (testCase, level = 0) => {
   const colorize = testCase.failure ? chalk.red : chalk.green;
   const tick = testCase.failure ? "✗" : "✓";
-  const duration = parseInt(testCase.$.duration);
+  const duration = Math.ceil(parseFloat(testCase.$.duration) * 1000);
 
   console.log(
     indent(level),
     colorize(tick),
     testCase.$.name,
-    duration > 0.5
+    duration > 500
       ? chalk.red(`(${duration}ms)`)
-      : duration > 0.2
+      : duration > 200
       ? chalk.yellow(`(${duration}ms)`)
       : ""
   );
